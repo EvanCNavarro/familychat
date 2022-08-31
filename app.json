@@ -3,7 +3,8 @@
     "name": "Family Chat",
     "icon": "./assets/familychat.png",
     "version": "1.1.5",
-    "slug": "family-chat-app",
+    "slug": "familychat",
+    "owner": "evancnavarro",
     "orientation": "portrait",
     "scheme": "familychat",
     "splash": {
