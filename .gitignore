@@ -1,22 +1,9 @@
-# dependencies
+# Root-level ignores (the frozen 2022-original/ keeps its own .gitignore too)
 node_modules/
-.expo/
-dist/
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
-
-# macOS
 .DS_Store
-
-# firebase configuration
-/firebase.js
-
-# yarn
-/yarn.lock
-/yarn-error.log
+*.log
+.expo/
+.expo-shared/
+dist/
+.env
+.env.*

@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+
+# firebase configuration
+/firebase.js
+
+# yarn
+/yarn.lock
+/yarn-error.log

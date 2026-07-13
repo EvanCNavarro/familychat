@@ -1,20 +1,30 @@
-# :speech_balloon: FamilyChat
+# FamilyChat
 
-### :information_source: A Senior Design project, centered around the deployment of both a promotional website and a highlighted mobile application. The FamilyChat application _(developed using Expo, React Native, & Firebase)_ is designed with families in mind; pairing interactive features, alongside standard messaging functionality: for an improved group-chat experience.
+A family-focused group-chat mobile app (Expo / React Native / Firebase) + promo site
+([familychat.app](https://www.familychat.app)), originally built as a **University of Central Florida
+Senior Design project** (Group 48, FALL 2021 / SPRING 2022) by Evan C. Navarro (PM, mobile, brand,
+app design), Jacques "JJ" Parizeau, and Pedro Roman.
 
-→  https://www.familychat.app
+## Repo structure — the original is frozen, new work is separate
 
-<hr>
-<br>
+| dir | what | status |
+|---|---|---|
+| **`2022-original/`** | the untouched senior-design codebase, exactly as delivered | **frozen** — archival; do not modify. Also preserved at git tag `original-2022` (retrievable at its original root layout via `git checkout original-2022`) |
+| **`2026-new/`** | the 2026-forward evolution | active — all new work goes here |
 
-> :mortar_board: _University of Central Florida / FALL 2021 & SPRING 2022 / Senior Design Project / `Group 48`_
+The split exists so the academic artifact stays pristine (portfolio / provenance) while the project
+can move forward without rewriting history. Treat `2022-original/` as read-only.
 
-**Project Members:**
-- [Evan C. Navarro](https://www.linkedin.com/in/EvanCNavarro/) — _{**Project Manager**, Mobile Development (Front-End / Back-End), Brand, & App Design}_
-- [Jacques "JJ" Parizeau](https://www.linkedin.com/in/jjparizeau/) — _{**Student Sponsor**, Mobile Development (Front-End / Back-End), Brand, App, & System Design}_
-- [Pedro Roman](https://www.linkedin.com/in/pedro-roman-profile/) — _{**Mobile Development (Back-End** / Front-End), Database}_
-- [Richard Morand](https://www.linkedin.com/in/richard-m-7a5235208/) — _{**Web Development**, Web Design, Database, Flex Mobile Development}_
-- [Tu Le](https://www.linkedin.com/in/connect-tu-le/) — _{**Mobile Development (Back-End** / Front-End), Database, Team Lead}_
+## ⚠️ Security — read before touching the live Firebase project
+The 2022 app shipped with **world-open Firestore rules** (`allow read, write: if true` — see
+`2022-original/firestore.rules`) on the live project **`family-chat-app-48`**, and familychat.app is
+still up. If that project is still active with data, the database is publicly readable/writable and may
+hold real family-chat PII. **This must be reviewed and locked down or shut down.** See `SECURITY.md`
+and `ROADMAP.md`.
 
-<hr>
-<br>
+## Running the original (reference)
+```bash
+cd 2022-original && npm install && npx expo start
+```
+Requires the `family-chat-app-48` Firebase project + Expo. The original targets that live project —
+don't point new work at it until the security review is done.
