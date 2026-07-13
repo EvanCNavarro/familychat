@@ -10,6 +10,27 @@ live project, the world-open rules below expose nothing; they remain only as a h
 `2022-original/`. To be 100% certain, check `console.cloud.google.com/cloud-resource-manager` under
 `app.familychat@gmail.com` for a pending-deletion entry (visible ~30 days). Otherwise: closed.
 
+## Full security sweep (2026-07-13) — all clear
+Comprehensive check of the whole repo (`2022-original/` + current) and git history:
+
+| check | result |
+|---|---|
+| Firebase config (apiKey/authDomain/projectId) | ✅ **never committed** — `firebase.js` was gitignored by the original team (`/firebase.js`) |
+| API keys (`AIza…`) in code or history | ✅ none |
+| Private keys / PEM / service-account JSON | ✅ none |
+| FCM server keys / third-party tokens (`AAAA…`, `sk-`, `ghp_`, `xox…`) | ✅ none, current or in history |
+| Git history (all commits) for secrets committed-then-removed | ✅ none |
+| Google tokens (`Bearer`, `ya29.…`) in the tracked debug logs | ✅ none |
+| Phone numbers (app uses phone auth) | ✅ all fictional (555-range) / test / a timestamp — no real numbers |
+| Real user PII (emails, chat data) | ✅ none — only the app contact address + a teammate email; no customer data |
+| `private/PROJECT-ACCESS.md` (saved credentials) | ✅ gitignored, never in history, never pushed |
+| Live Firebase project | ✅ deleted/inaccessible (see above) — no live exposure |
+| `familychat.app` domain | ✅ no longer ours; separate Apache promo site, not the data surface |
+
+**Nits (not exposures):** 6 tracked `*-debug.log` files (~31k lines of build noise; one contains a
+teammate's local path `/Users/jjparizeau`) — left in place to keep `2022-original/` untouched (the
+`original-2022` tag preserves them anyway). Scrub only if the original is ever intentionally re-cut.
+
 ## Original finding (historical) — world-writable Firestore
 The 2022 app's Firestore rules (`2022-original/firestore.rules`) are:
 ```
