@@ -12,16 +12,22 @@ live infrastructure may still be up.
 **Impact if the project is still active:** any Firestore data (family chat messages, user info — PII)
 is publicly readable, and the database can be written or wiped by anyone.
 
-**Not yet resolved this pass** — the Firebase CLI failed to list projects (logged in as
-evancnavarro@gmail.com, but `firebase projects:list` errored; likely a stale token / Management API
-not enabled). The live state could not be confirmed programmatically.
+**The project is NOT under the current account.** With `evancnavarro@gmail.com` logged in,
+`firebase projects:list` returns **zero projects**, and `family-chat-app-48` returns **403 permission
+denied** (not 404) — i.e. it exists but under a **different owner**. Most likely a Group 48 teammate
+(JJ Parizeau / Pedro Roman) or an old UCF-era Google account. So the open DB, if still live, cannot be
+secured from this account.
 
-**To resolve (needs Firebase console or a working CLI):**
-1. Confirm whether `family-chat-app-48` is still active and whether Firestore holds real data.
-2. If keeping it: replace the rules with authenticated, per-user access (`allow read, write: if
-   request.auth != null && ...`) and deploy.
-3. If retired: delete the Firestore data + the project (or disable it) so nothing dangling stays open.
-4. Fix the CLI if needed: `firebase login --reauth`, and enable the Firebase Management API.
+Note: **www.familychat.app is served by Apache** — a separate promo/marketing site, *not* the Firebase
+project. It is not the data-exposure surface; the exposure (if any) is Firestore on `family-chat-app-48`.
+
+**To resolve (needs the OWNING account):**
+1. Identify who owns `family-chat-app-48` — an old Google account of yours, or a teammate's.
+2. Log in to that account (or ask the teammate) and check the Firebase console: is the project active,
+   does Firestore hold real data, are the deployed rules still `allow read, write: if true`?
+3. If keeping it: deploy authenticated per-user rules (`allow read, write: if request.auth != null
+   && ...`). If retired: delete the data / project so nothing stays world-open.
+4. If the project turns out already deleted, there is no live exposure — close this item.
 
 ## Notes (lower severity)
 - **No hard secrets committed** — no `.env`, no service-account JSON, no `google-services.json`. The

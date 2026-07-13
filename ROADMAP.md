@@ -9,12 +9,15 @@ No live Firebase changes made (CLI was blocked).*
 
 ---
 
-## PITSTOP 0 — 🚨 secure the live Firebase project (pressing; needs console / working CLI)
-- [ ] Confirm whether `family-chat-app-48` is still active and whether Firestore holds real data
-      (familychat.app is up; rules are world-open — see `SECURITY.md`).
-- [ ] Lock down (authenticated per-user rules + deploy) **or** shut down (delete data/project).
-- [ ] Unblock the Firebase CLI (`firebase login --reauth`; enable the Management API) — it failed to
-      list projects this pass.
+## PITSTOP 0 — 🚨 secure the live Firebase project (BLOCKED — needs the owning account)
+- [ ] **`family-chat-app-48` is not under `evancnavarro@gmail.com`** (0 projects; 403-not-404 = exists,
+      different owner). Identify the owner — an old UCF-era Google account of yours, or a Group 48
+      teammate. See `SECURITY.md`.
+- [ ] From the owning account: confirm the project is active + whether Firestore holds real data + the
+      deployed rules; then lock down (authenticated per-user rules) or shut down (delete). World-open
+      rules (`allow read, write: if true`) are in the original code.
+- [x] **Ruled out:** www.familychat.app is a separate Apache-hosted promo site, not the Firebase
+      project — not the exposure surface.
 
 ## PITSTOP 1 — decide the 2026-forward direction (product call, Bobby)
 - [ ] What is `2026-new/`? Options: revive/modernize the Expo/RN app (deps are 3+ years stale), a
