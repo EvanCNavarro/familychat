@@ -24,12 +24,21 @@ data-exposure surface. The exposure (if any) is Firestore on `family-chat-app-48
 outside our current account. **The entire live surface — domain and Firebase project — is no longer
 under our control**, so any fix requires the owning account(s).
 
-**To resolve (needs the OWNING account):**
-1. Identify who owns `family-chat-app-48` — an old Google account of yours, or a teammate's.
-2. Log in to that account (or ask the teammate) and check the Firebase console: is the project active,
-   does Firestore hold real data, are the deployed rules still `allow read, write: if true`?
+**The owning account — concrete lead: `familychatapp@gmail.com`.** This is the app's official contact
+address (`2022-original/screens/4_Profile/ProfileTab.js`) — a dedicated project Gmail, the standard way
+a team holds shared infrastructure. It almost certainly owns the Firebase project `family-chat-app-48`
+(and likely the domain + app-store listings). `evancnavarro@gmail.com` owns only the *Expo* side
+(`app.json` `owner: evancnavarro`) — which is why Firebase returns 403 (different owner), not 404.
+Contributors on record: EvanCNavarro, parizeaujj@gmail.com (JJ), proman655 (Pedro), tule1102@knights.ucf.edu.
+
+**To resolve:**
+1. Log into the Firebase console with **`familychatapp@gmail.com`** (recover the password if needed, or
+   ask a teammate who has it).
+2. Check: is `family-chat-app-48` active, does Firestore hold real data, are the deployed rules still
+   `allow read, write: if true`?
 3. If keeping it: deploy authenticated per-user rules (`allow read, write: if request.auth != null
-   && ...`). If retired: delete the data / project so nothing stays world-open.
+   && ...`). If retired: delete the data / project so nothing stays world-open. Same account likely
+   controls the `familychat.app` domain and store listings — clean those up while you're in there.
 4. If the project turns out already deleted, there is no live exposure — close this item.
 
 ## Notes (lower severity)
