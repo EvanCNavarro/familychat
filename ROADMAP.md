@@ -4,8 +4,24 @@ Resumable audit + go-forward plan. See `README.md` for the `2022-original/` (fro
 (active) split, and `SECURITY.md` for the open Firestore finding.
 
 *Audited 2026-07-13 as part of the ~/Developer cleanup. This pass: restructured into
-`2022-original/` (frozen, tagged `original-2022`) + `2026-new/`, and captured the findings below.
-No live Firebase changes made (CLI was blocked).*
+`2022-original/` (frozen, tagged `original-2022`) + `2026-new/`, and captured the findings below.*
+
+---
+
+## Cleanup completeness — the raised-bar checklist
+| item | status |
+|---|---|
+| Placed / named correctly | ✅ `~/Developer/familychat`, repo `EvanCNavarro/familychat` |
+| README clean | ✅ root README (split + status) |
+| Compliance docs (ROADMAP / PROJECT / DESIGN / CHECKLIST / SECURITY) | ✅ ROADMAP + SECURITY; PROJECT/DESIGN/CHECKLIST land in `2026-new/` at project-start |
+| Head-to-toe audit → ROADMAP | ✅ this file |
+| Claude memory added | ✅ `project_familychat.md` + MEMORY.md pointer |
+| GitHub repo name clean | ✅ `familychat` |
+| GitHub description + topic chips + metadata | ✅ description corrected; homepage cleared (domain lost); `reactjs`→`react-native` |
+| GitHub visibility correct | ✅ public (clean portfolio piece, no secrets) |
+| GitHub Actions correct | ✅ none (frozen archival; CI applies to `2026-new/` when built) |
+| No secrets / exposed keys | ✅ full sweep — see `SECURITY.md` "Full security sweep" |
+| project-start + chug set up in `2026-new/` | ▶ in progress this session |
 
 ---
 
