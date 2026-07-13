@@ -1,6 +1,16 @@
 # FamilyChat — SECURITY
 
-## 🚨 Open finding — world-writable Firestore on the live project
+## ✅ Resolved (very likely) — the Firebase project appears deleted
+**2026-07-13 update:** Checked the Firebase console signed in as the owner account
+`app.familychat@gmail.com` (`/u/2/`). That account has **zero Firebase projects** (the console offered
+to "prepare a demo project" — only shown for an empty account), and `family-chat-app-48` returns "the
+project does not exist or you do not have permission." The most likely explanation is that the project
+was **deleted — auto-pruned as a long-dormant free-tier project**, or cleaned up years ago. With no
+live project, the world-open rules below expose nothing; they remain only as a historical artifact in
+`2022-original/`. To be 100% certain, check `console.cloud.google.com/cloud-resource-manager` under
+`app.familychat@gmail.com` for a pending-deletion entry (visible ~30 days). Otherwise: closed.
+
+## Original finding (historical) — world-writable Firestore
 The 2022 app's Firestore rules (`2022-original/firestore.rules`) are:
 ```
 match /{document=**} { allow read, write: if true; }

@@ -9,16 +9,16 @@ No live Firebase changes made (CLI was blocked).*
 
 ---
 
-## PITSTOP 0 — 🚨 secure the live Firebase project (BLOCKED — needs the owning account)
-- [ ] **`family-chat-app-48` is not under `evancnavarro@gmail.com`** (0 projects; 403-not-404 = exists,
-      different owner). **Owner account: `app.familychat@gmail.com`** — creds + all project links in the
-      gitignored `private/PROJECT-ACCESS.md`. Log into Firebase with it. See `SECURITY.md`.
-- [ ] From the owning account: confirm the project is active + whether Firestore holds real data + the
-      deployed rules; then lock down (authenticated per-user rules) or shut down (delete). World-open
-      rules (`allow read, write: if true`) are in the original code.
+## PITSTOP 0 — ✅ Firebase exposure very likely resolved (project appears deleted)
+- [x] **Checked as the owner account `app.familychat@gmail.com` (Firebase console, `/u/2/`):** the
+      account has ZERO projects (got the "prepare a demo project" onboarding) and `family-chat-app-48`
+      shows "does not exist / no permission." Almost certainly **deleted — auto-pruned as a dormant
+      free-tier project.** No live project → the world-open `allow read, write: if true` rules expose
+      nothing; they survive only as a historical artifact in `2022-original/`. See `SECURITY.md`.
+- [ ] (Optional certainty) Check `console.cloud.google.com/cloud-resource-manager` under
+      `app.familychat@gmail.com` for a pending-deletion entry (~30-day window). Otherwise this is closed.
 - [x] **Ruled out / lost:** the `familychat.app` domain is no longer ours (separate Apache promo site,
-      not the Firebase project) — not the exposure surface, and out of our control. The whole live
-      surface (domain + Firebase project) is outside the current account now.
+      not the Firebase project) — not the exposure surface.
 
 ## PITSTOP 1 — decide the 2026-forward direction (product call, Bobby)
 - [ ] What is `2026-new/`? Options: revive/modernize the Expo/RN app (deps are 3+ years stale), a
