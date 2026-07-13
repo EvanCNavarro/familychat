@@ -21,7 +21,7 @@ Resumable audit + go-forward plan. See `README.md` for the `2022-original/` (fro
 | GitHub visibility correct | ✅ public (clean portfolio piece, no secrets) |
 | GitHub Actions correct | ✅ none (frozen archival; CI applies to `2026-new/` when built) |
 | No secrets / exposed keys | ✅ full sweep — see `SECURITY.md` "Full security sweep" |
-| project-start + chug set up in `2026-new/` | ▶ in progress this session |
+| project-start + chug set up in `2026-new/` | ✅ direction decided (revive Expo/RN as portfolio); PROJECT/DESIGN/CHECKLIST/README scaffolded; chug ready (`.engine` auto-scaffolds on first `/order`) |
 
 ---
 
