@@ -18,8 +18,11 @@ denied** (not 404) — i.e. it exists but under a **different owner**. Most like
 (JJ Parizeau / Pedro Roman) or an old UCF-era Google account. So the open DB, if still live, cannot be
 secured from this account.
 
-Note: **www.familychat.app is served by Apache** — a separate promo/marketing site, *not* the Firebase
-project. It is not the data-exposure surface; the exposure (if any) is Firestore on `family-chat-app-48`.
+Note: **the `familychat.app` domain is no longer owned by us** — it was a separate Apache-hosted promo
+site (not the Firebase project); whatever serves it now is out of our control. It is not the
+data-exposure surface. The exposure (if any) is Firestore on `family-chat-app-48`, which is likewise
+outside our current account. **The entire live surface — domain and Firebase project — is no longer
+under our control**, so any fix requires the owning account(s).
 
 **To resolve (needs the OWNING account):**
 1. Identify who owns `family-chat-app-48` — an old Google account of yours, or a teammate's.

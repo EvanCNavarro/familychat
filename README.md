@@ -1,9 +1,11 @@
 # FamilyChat
 
-A family-focused group-chat mobile app (Expo / React Native / Firebase) + promo site
-([familychat.app](https://www.familychat.app)), originally built as a **University of Central Florida
-Senior Design project** (Group 48, FALL 2021 / SPRING 2022) by Evan C. Navarro (PM, mobile, brand,
-app design), Jacques "JJ" Parizeau, and Pedro Roman.
+A family-focused group-chat mobile app (Expo / React Native / Firebase), originally built as a
+**University of Central Florida Senior Design project** (Group 48, FALL 2021 / SPRING 2022) by
+Evan C. Navarro (PM, mobile, brand, app design), Jacques "JJ" Parizeau, and Pedro Roman.
+
+> **Note:** the original `familychat.app` domain was a promo site that is **no longer owned by us** —
+> whatever currently serves it is out of our control; do not treat it as this project's site.
 
 ## Repo structure — the original is frozen, new work is separate
 
@@ -17,10 +19,11 @@ can move forward without rewriting history. Treat `2022-original/` as read-only.
 
 ## ⚠️ Security — read before touching the live Firebase project
 The 2022 app shipped with **world-open Firestore rules** (`allow read, write: if true` — see
-`2022-original/firestore.rules`) on the live project **`family-chat-app-48`**, and familychat.app is
-still up. If that project is still active with data, the database is publicly readable/writable and may
-hold real family-chat PII. **This must be reviewed and locked down or shut down.** See `SECURITY.md`
-and `ROADMAP.md`.
+`2022-original/firestore.rules`) on the project **`family-chat-app-48`**. That project is **not under
+our current Firebase account** (owned by a teammate or an old account) and the `familychat.app` domain
+is also no longer ours — so the live surface is outside our control. If the project is still active,
+its DB may be publicly readable/writable with real family-chat PII, and only the owning account can
+lock it down or shut it off. See `SECURITY.md` and `ROADMAP.md`.
 
 ## Running the original (reference)
 ```bash

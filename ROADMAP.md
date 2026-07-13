@@ -16,8 +16,9 @@ No live Firebase changes made (CLI was blocked).*
 - [ ] From the owning account: confirm the project is active + whether Firestore holds real data + the
       deployed rules; then lock down (authenticated per-user rules) or shut down (delete). World-open
       rules (`allow read, write: if true`) are in the original code.
-- [x] **Ruled out:** www.familychat.app is a separate Apache-hosted promo site, not the Firebase
-      project — not the exposure surface.
+- [x] **Ruled out / lost:** the `familychat.app` domain is no longer ours (separate Apache promo site,
+      not the Firebase project) — not the exposure surface, and out of our control. The whole live
+      surface (domain + Firebase project) is outside the current account now.
 
 ## PITSTOP 1 — decide the 2026-forward direction (product call, Bobby)
 - [ ] What is `2026-new/`? Options: revive/modernize the Expo/RN app (deps are 3+ years stale), a
