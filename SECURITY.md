@@ -24,16 +24,15 @@ data-exposure surface. The exposure (if any) is Firestore on `family-chat-app-48
 outside our current account. **The entire live surface — domain and Firebase project — is no longer
 under our control**, so any fix requires the owning account(s).
 
-**The owning account — concrete lead: `familychatapp@gmail.com`.** This is the app's official contact
-address (`2022-original/screens/4_Profile/ProfileTab.js`) — a dedicated project Gmail, the standard way
-a team holds shared infrastructure. It almost certainly owns the Firebase project `family-chat-app-48`
-(and likely the domain + app-store listings). `evancnavarro@gmail.com` owns only the *Expo* side
-(`app.json` `owner: evancnavarro`) — which is why Firebase returns 403 (different owner), not 404.
+**The owning account: `app.familychat@gmail.com`** — the shared project Gmail that owns the Firebase
+project `family-chat-app-48` (and likely the domain + app-store listings). `evancnavarro@gmail.com` owns
+only the *Expo* side (`app.json` `owner: evancnavarro`) — which is why Firebase returns 403 (different
+owner), not 404. **Full credentials + all project links (Drive, Trello, Figma, Firebase console, GitHub
+org UCF-SD-Group-48, Expo) are in the gitignored `private/PROJECT-ACCESS.md`** — never committed.
 Contributors on record: EvanCNavarro, parizeaujj@gmail.com (JJ), proman655 (Pedro), tule1102@knights.ucf.edu.
 
 **To resolve:**
-1. Log into the Firebase console with **`familychatapp@gmail.com`** (recover the password if needed, or
-   ask a teammate who has it).
+1. Log into the Firebase console with **`app.familychat@gmail.com`** (credentials in `private/`).
 2. Check: is `family-chat-app-48` active, does Firestore hold real data, are the deployed rules still
    `allow read, write: if true`?
 3. If keeping it: deploy authenticated per-user rules (`allow read, write: if request.auth != null

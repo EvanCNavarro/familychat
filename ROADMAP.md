@@ -11,8 +11,8 @@ No live Firebase changes made (CLI was blocked).*
 
 ## PITSTOP 0 — 🚨 secure the live Firebase project (BLOCKED — needs the owning account)
 - [ ] **`family-chat-app-48` is not under `evancnavarro@gmail.com`** (0 projects; 403-not-404 = exists,
-      different owner). **Concrete lead: `familychatapp@gmail.com`** — the app's official contact address
-      (`ProfileTab.js`), almost certainly the owning account. Log into Firebase with it. See `SECURITY.md`.
+      different owner). **Owner account: `app.familychat@gmail.com`** — creds + all project links in the
+      gitignored `private/PROJECT-ACCESS.md`. Log into Firebase with it. See `SECURITY.md`.
 - [ ] From the owning account: confirm the project is active + whether Firestore holds real data + the
       deployed rules; then lock down (authenticated per-user rules) or shut down (delete). World-open
       rules (`allow read, write: if true`) are in the original code.

@@ -1,4 +1,5 @@
 # Root-level ignores (the frozen 2022-original/ keeps its own .gitignore too)
+private/
 node_modules/
 .DS_Store
 *.log
